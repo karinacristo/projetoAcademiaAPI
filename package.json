@@ -1,0 +1,15 @@
+{
+  "name": "projetoacademiaapi",
+  "version": "1.0.0",
+  "description": "projeto resilia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "karina cristo",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3"
+  },
+  "type": "module"
+}
