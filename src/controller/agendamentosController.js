@@ -7,6 +7,7 @@ const agendamentosController = app => {
     })
 
     app.post('/agendamentos', (req, res) => {
+        const body = req.body
         res.json({
             "mensagem" : "seu agendamento foi salvo com sucesso!"
         })
