@@ -1,5 +1,5 @@
 import express from "express";
-import agendamentosController from "./controller/agendamentosController";
+import agendamentosController from "./controller/agendamentosController.js";
 
 const app = express()
 const porta = 3010
