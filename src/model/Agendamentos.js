@@ -32,7 +32,7 @@ class Agendamentos {
 
     insereAgendamento = async (agendamento) => {
         try {
-            const novoAgendamento = new AgendamentosSchema(agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações)
+            const novoAgendamento = new AgendamentosSchema(agendamento.cliente, agendamento.data, agendamento.profissional, agendamento.período, agendamento.serviço, agendamento.observações)
             return await this.dao.insereAgendamento(novoAgendamento)
         } catch (error) {
             throw new Error (error.mensagem)

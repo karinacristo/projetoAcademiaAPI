@@ -55,7 +55,7 @@ class AgendamentosDAO{
 
         return new Promise((resolve, reject)=>{
             this.db.run("INSERT INTO AGENDAMENTOS (CLIENTE, DATA, PROFISSIONAL, PERÍODO, SERVIÇO, OBSERVAÇÕES) VALUES (?, ?, ?, ?, ?, ?)",
-            novoAgendamento.cliente, novoAgendamento.data, novoAgendamento.profissonal, novoAgendamento.período, novoAgendamento.serviço, novoAgendamento.observações,
+            novoAgendamento.cliente, novoAgendamento.data, novoAgendamento.profissional, novoAgendamento.período, novoAgendamento.serviço, novoAgendamento.observações,
                 (error)=>{
                 if(error){
                     reject(error)
@@ -86,7 +86,7 @@ class AgendamentosDAO{
 
     atualizaAgendamento = (ID_CLIENTE, agendamento)=>{
         return new Promise((resolve, reject)=>{
-            this.db.run('UPDATE AGENDAMENTOS SET CLIENTE = ?, DATA = ?, PROFISSIONAL = ?, PERÍODO = ?, SERVIÇO = ?, OBSERVAÇÕES = ? WHERE ID = ?',
+            this.db.run('UPDATE AGENDAMENTOS SET CLIENTE = ?, DATA = ?, PROFISSIONAL = ?, PERÍODO = ?, SERVIÇO = ?, OBSERVAÇÕES = ? WHERE ID_CLIENTE = ?',
             agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações,
             ID_CLIENTE,
             (error)=>{
@@ -94,7 +94,7 @@ class AgendamentosDAO{
                     reject(error)
                 }else{
                     resolve({
-                        "mensagem": `Seu agendamento de id ${ID_CLIENTE} atualizado com sucesso`,
+                        "mensagem": `Seu agendamento de id ${ID_CLIENTE} foi atualizado com sucesso`,
                         "agendamento": agendamento,
                         "erro": false
                     })

@@ -45,7 +45,7 @@ const agendamentosController = (app, bancoDeDados) => {
         res.json(await agendamentoModel.deletaAgendamento(id))
     })
 
-    app.put('/agendamentos/ID_CLIENTE/:id', async (req, res) => {
+    app.put('/agendamentos/ID_CLIENTE/:ID_CLIENTE', async (req, res) => {
         const id = req.params.ID_CLIENTE 
         const body = req.body
         res.json(await agendamentoModel.atualizaAgendamento(id, body))
