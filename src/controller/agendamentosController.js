@@ -12,7 +12,7 @@ const agendamentosController = (app, bancoDeDados) => {
     app.post('/agendamentos', (req, res) => {
         const body = req.body
         try {
-            const novoAgendamento = new Agendamentos(body.cliente, body.data, body.profissional, body.período, body.serviço, body.observação)
+            const novoAgendamento = new Agendamentos(body.cliente, body.data, body.profissional, body.período, body.serviço, body.observações)
 
             bancoDeDados.agendamento.push(novoAgendamento)
 
