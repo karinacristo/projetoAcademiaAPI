@@ -26,7 +26,7 @@ class AgendamentosDAO{
                     reject(error)
                 }else{
                     resolve({
-                        "usuario": rows,
+                        "agendamento": rows,
                         "erro": false
                     })
                 }
@@ -34,16 +34,16 @@ class AgendamentosDAO{
         })
     }
 
-    pegaClienteId = (id)=>{
+    pegaClienteId = (ID_CLIENTE)=>{
         return new Promise((resolve, reject)=>{
-            this.db.all('SELECT * FROM USUARIOS WHERE ID = ?',
-            id,
+            this.db.all('SELECT * FROM AGENDAMENTOS WHERE ID_CLIENTE = ?',
+            ID_CLIENTE,
             (error, rows)=>{
                 if(error){
                     reject(error)
                 }else{
                     resolve({
-                        "usuario": rows,
+                        "agendamento": rows,
                         "erro": false
                     })
                 }
@@ -54,29 +54,29 @@ class AgendamentosDAO{
     insereAgendamento = (novoAgendamento) =>{
 
         return new Promise((resolve, reject)=>{
-            this.db.run("INSERT INTO AGENDAMENTOS(CLIENTE, DATA, PROFISSIONAL, PERÍODO, SERVIÇO, OBSERVAÇÕES) VALUES (?, ?, ?)",
+            this.db.run("INSERT INTO AGENDAMENTOS (CLIENTE, DATA, PROFISSIONAL, PERÍODO, SERVIÇO, OBSERVAÇÕES) VALUES (?, ?, ?, ?, ?, ?)",
             novoAgendamento.cliente, novoAgendamento.data, novoAgendamento.profissonal, novoAgendamento.período, novoAgendamento.serviço, novoAgendamento.observações,
                 (error)=>{
                 if(error){
                     reject(error)
                 }else{
-                    resolve(`Seu agendamento foi marcado com sucesso! Obrigado ${novoAgendamento.cliente}.`)
+                    resolve(`Seu agendamento foi marcado com sucesso! Obrigado.`)
                 }
             })
         })
 
     }
 
-    deletaAgendamento = (id)=>{
+    deletaAgendamento = (ID_CLIENTE)=>{
         return new Promise((resolve, reject)=>{
-            this.db.run('DELETE FROM USUARIOS WHERE ID = ?',
-            id,
+            this.db.run('DELETE FROM AGENDAMENTOS WHERE ID_CLIENTE = ?',
+            ID_CLIENTE,
             (error)=>{
                 if(error){
                     reject(error)
                 }else{
                     resolve({
-                        "usuario": `Seu agendamento de id ${id} deletado com sucesso`,
+                        "agendamento": `Seu agendamento de id ${ID_CLIENTE} deletado com sucesso`,
                         "erro": false
                     })
                 }
@@ -84,18 +84,18 @@ class AgendamentosDAO{
         })
     }
 
-    atualizaAgendamento = (id, agendamento)=>{
+    atualizaAgendamento = (ID_CLIENTE, agendamento)=>{
         return new Promise((resolve, reject)=>{
             this.db.run('UPDATE AGENDAMENTOS SET CLIENTE = ?, DATA = ?, PROFISSIONAL = ?, PERÍODO = ?, SERVIÇO = ?, OBSERVAÇÕES = ? WHERE ID = ?',
             agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações,
-            id,
+            ID_CLIENTE,
             (error)=>{
                 if(error){
                     reject(error)
                 }else{
                     resolve({
-                        "mensagem": `Seu agendamento de id ${id} atualizado com sucesso`,
-                        "usuario": agendamento,
+                        "mensagem": `Seu agendamento de id ${ID_CLIENTE} atualizado com sucesso`,
+                        "agendamento": agendamento,
                         "erro": false
                     })
                 }

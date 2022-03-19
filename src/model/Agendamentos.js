@@ -22,27 +22,27 @@ class Agendamentos {
         }
     }
     
-    pegaClienteId = async (id) => {
+    pegaClienteId = async (ID_CLIENTE) => {
         try {
-            return await this.dao.pegaClienteId(id)
+            return await this.dao.pegaClienteId(ID_CLIENTE)
         } catch (error) {
             throw new Error(error.mensagem)
         }
     }
 
-    insereAgendamento = async (novoAgendamento) => {
+    insereAgendamento = async (agendamento) => {
         try {
-            const novoAgendamento = new AgendamentosSchema(novoAgendamento.cliente, novoAgendamento.data, novoAgendamento.profissonal, novoAgendamento.período, novoAgendamento.serviço, novoAgendamento.observações)
+            const novoAgendamento = new AgendamentosSchema(agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações)
             return await this.dao.insereAgendamento(novoAgendamento)
         } catch (error) {
             throw new Error (error.mensagem)
         }
     }
 
-    deletaAgendamento = async (id) => {
+    deletaAgendamento = async (ID_CLIENTE) => {
         try {
-            await this._verificaAgendamento(id)
-            return await this.dao.deletaAgendamento(id)  
+            await this._verificaAgendamento(ID_CLIENTE)
+            return await this.dao.deletaAgendamento(ID_CLIENTE)  
         } catch (error) {
             return {
                 "mensagem" : error.message,
@@ -51,11 +51,11 @@ class Agendamentos {
         }
     }
 
-    atualizaAgendamento = async (id, agendamento) => {
+    atualizaAgendamento = async (ID_CLIENTE, agendamento) => {
         try {
-            await this._verificaAgendamento(id)
-            const agendamentoAtualizado = new AgendamentosSchema(novoAgendamento.cliente, novoAgendamento.data, novoAgendamento.profissonal, novoAgendamento.período, novoAgendamento.serviço, novoAgendamento.observações)
-            return await this.dao.atualizaAgendamento(id, agendamentoAtualizado)
+            await this._verificaAgendamento(ID_CLIENTE)
+            const agendamentoAtualizado = new AgendamentosSchema(agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações)
+            return await this.dao.atualizaAgendamento(ID_CLIENTE, agendamentoAtualizado)
         } catch (error) {
             return ({
                 "mensagem" : error.message,
@@ -64,10 +64,10 @@ class Agendamentos {
         }
     }
 
-    _verificaAgendamento = async (id) => {
-        const resposta = await this.dao.pegaClienteId(id)
+    _verificaAgendamento = async (ID_CLIENTE) => {
+        const resposta = await this.dao.pegaClienteId(ID_CLIENTE)
         if(resposta.agendamento.length === 0){
-            throw new Error (`O agendamento de id ${id} não existe`)
+            throw new Error (`O agendamento de id ${ID_CLIENTE} não existe`)
         }
     }
 

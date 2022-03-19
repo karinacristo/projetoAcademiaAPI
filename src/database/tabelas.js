@@ -3,7 +3,6 @@ sqlite3.verbose()
 import { dirname } from'path'
 import { fileURLToPath } from 'url'
 const filePath = dirname(fileURLToPath(import.meta.url)) + '/database.db'
-
 const db = new sqlite3.Database(filePath);
 
 
@@ -18,7 +17,7 @@ CREATE TABLE IF NOT EXISTS "AGENDAMENTOS" (
     "OBSERVAÇÕES" VARCHAR(500)
   );`;
 
-const ADD_AGENDAMENTOS = `
+const ADD_AGENDAMENTOS_DATA = `
 INSERT INTO AGENDAMENTOS (ID_CLIENTE, CLIENTE, DATA, PROFISSIONAL, PERÍODO, SERVIÇO, OBSERVAÇÕES)
 VALUES 
 
@@ -44,7 +43,7 @@ function criaTabela() {
 
 
 function populaTabela() {
-    db.run(ADD_AGENDAMENTOS, (error)=> {
+    db.run(ADD_AGENDAMENTOS_DATA, (error)=> {
        if (error) console.log("Erro ao popular tabela de usuários");
     });
 }
