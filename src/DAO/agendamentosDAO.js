@@ -60,7 +60,7 @@ class AgendamentosDAO{
                 if(error){
                     reject(error)
                 }else{
-                    resolve(`Seu agendamento foi marcado com sucesso! Obrigado.`)
+                    resolve(`Seu agendamento foi marcado com sucesso! Obrigado ${novoAgendamento.cliente}.`)
                 }
             })
         })
@@ -94,7 +94,7 @@ class AgendamentosDAO{
                     reject(error)
                 }else{
                     resolve({
-                        "mensagem": `Seu agendamento de id ${ID_CLIENTE} foi atualizado com sucesso`,
+                        "mensagem": `Olá ${agendamento.cliente}, seu agendamento de id ${ID_CLIENTE} foi atualizado com sucesso`,
                         "agendamento": agendamento,
                         "erro": false
                     })

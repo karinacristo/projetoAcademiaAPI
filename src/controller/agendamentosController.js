@@ -24,6 +24,12 @@ const agendamentosController = (app, bancoDeDados) => {
             res.json(await agendamentoModel.pegaUmCliente(cliente))
     })
 
+    app.get('/agendamentos/ID_CLIENTE/:ID_CLIENTE', async (req, res) => {
+        const ID_CLIENTE = req.params.ID_CLIENTE
+        res.json(await agendamentoModel.pegaClienteId(ID_CLIENTE))
+})
+
+
     app.post('/agendamentos', async (req, res) => {
         const body = req.body
         try {
