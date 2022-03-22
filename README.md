@@ -73,11 +73,6 @@ Para iniciar os projetos use o comando abaixo
 ```sh
 npm start
 ```
-#### Popular o banco de dados
-Para o arquivo 'database.db' ser populado, exite o arquivo tabelas. Para fazê-lo rodar, abra seu terminal e execute o comando:
-```sh
-npm run go
-```
 
 #### Rotas e seus resultados
 
