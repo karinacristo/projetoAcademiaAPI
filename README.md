@@ -56,18 +56,6 @@ Lembre-se do que você irá precisará ter instalado em sua máquina para execut
    ```sh
    npm install
    ```
-2. Instale Express
-   ```sh
-   npm install express
-   ```
-3. Instale Nodemon
-   ```sh
-   npm install nodemon
-   ```
-3. Instale SQLite
-   ```sh
-   npm install sqlite3
-   ```
    
   #### Instalação
   
