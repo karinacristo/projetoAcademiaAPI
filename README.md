@@ -21,7 +21,7 @@
       <a href="#sobre-o-projeto">Sobre o projeto</a>
     </li>
     <li>
-      <a href="#instalar-iniciar">Como instalar e iniciar o projeto</a>
+      <a href="#como-instalar-e-iniciar">Como instalar e iniciar o projeto</a>
     </li>
     <li><a href="#contato">Contato</a></li>
   </ol>
