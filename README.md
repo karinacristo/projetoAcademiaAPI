@@ -44,6 +44,53 @@
   * [Nodemon](https://www.npmjs.com/package/nodemon) v2.0.15
   * [SQLite](https://www.sqlite.org/index.html) v5.0.2
 
+
+ ## Como instalar e iniciar 🏁
+  
+ Este é um exemplo sobre como instalar e configurar seu projeto localmente. Para fazer uma cópia local e iniciar, siga estas etapas de exemplo simples.
+
+#### Pré-Requisitos
+
+Lembre-se do que você irá precisará ter instalado em sua máquina para executar o prejeto. 👇
+1. Instale NPM
+   ```sh
+   npm install
+   ```
+2. Instale Express
+   ```sh
+   npm install express
+   ```
+3. Instale Nodemon
+   ```sh
+   npm install nodemon
+   ```
+3. Instale SQLite
+   ```sh
+   npm install sqlite3
+   ```
+   
+  #### Instalação
+  
+  Abra o terminal/Powershell e rode os comandos abaixo:
+
+Para clonar o repositório:
+ ```sh
+   git clone https://github.com/karinacristo/projetoAcademiaAPI.git
+   ```
+Acesse a pasta criada:
+```sh
+cd projetoAcademiaAPI
+```
+Para iniciar os projetos use o comando abaixo
+```sh
+npm start
+```
+#### Popular o banco de dados
+Para o arquivo 'database.db' ser populado, exite o arquivo tabelas. Para fazê-lo rodar, abra seu terminal e execute o comando:
+```sh
+npm run go
+```
+
 #### Rotas e seus resultados
 
 Ao executar a entidade agendamentos, aparecerá os atributos adicionados à ela, que são: id, cliente, data, profissional, período, serviço e observações. Veja os resultados:
@@ -136,39 +183,12 @@ Schema da resposta.
 	"Erro": (booleano)
 }
   ```
-  
-  ## Como instalar e iniciar
-  
- Este é um exemplo sobre como instalar e configurar seu projeto localmente. Para fazer uma cópia local e iniciar, siga estas etapas de exemplo simples.
+  ## Contato 📝
 
-#### Pré-Requisitos
-
-Lembre-se do que você irá precisará ter instalado em sua máquina para executar o prejeto. 👇
-1. Instale NPM
-   ```sh
-   npm install
-   ```
-2. Instale Express
-   ```sh
-   npm install express
-   ```
-3. Instale Nodemon
-   ```sh
-   npm install nodemon
-   ```
-3. Instale SQLite
-   ```sh
-   npm install sqlite3
-   ```
-   
-  #### Instalação
+Karina Cristo - [Linkedin](https://www.linkedin.com/feed/) - [GitHub](https://github.com/karinacristo)
   
-  Abra o terminal/Powershell e rode os comandos abaixo:
 
-Para clonar o repositório:
- ```sh
-   git clone @https://github.com/karinacristo/projetoAcademiaAPI.git
-   ```
+
 
    
    
