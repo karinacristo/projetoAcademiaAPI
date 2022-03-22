@@ -37,14 +37,14 @@ VALUES
 
 function criaTabela() {
     db.run(AGENDAMENTOS_SCHEMA, (error)=> {
-       if (error) console.log("Erro ao criar tabela de usuários");
+       if (error) console.log("Erro ao criar tabela de agendamentos");
     });
 }
 
 
 function populaTabela() {
     db.run(ADD_AGENDAMENTOS_DATA, (error)=> {
-       if (error) console.log("Erro ao popular tabela de usuários");
+       if (error) console.log("Erro ao popular tabela de agendamentos");
     });
 }
 
