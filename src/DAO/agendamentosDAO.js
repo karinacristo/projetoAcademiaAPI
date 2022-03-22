@@ -87,7 +87,7 @@ class AgendamentosDAO{
     atualizaAgendamento = (ID_CLIENTE, agendamento)=>{
         return new Promise((resolve, reject)=>{
             this.db.run('UPDATE AGENDAMENTOS SET CLIENTE = ?, DATA = ?, PROFISSIONAL = ?, PERÍODO = ?, SERVIÇO = ?, OBSERVAÇÕES = ? WHERE ID_CLIENTE = ?',
-            agendamento.cliente, agendamento.data, agendamento.profissonal, agendamento.período, agendamento.serviço, agendamento.observações,
+            agendamento.cliente, agendamento.data, agendamento.profissional, agendamento.período, agendamento.serviço, agendamento.observações,
             ID_CLIENTE,
             (error)=>{
                 if(error){
