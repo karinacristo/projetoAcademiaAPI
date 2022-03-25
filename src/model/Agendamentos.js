@@ -38,9 +38,9 @@ class Agendamentos {
             throw new Error (error.mensagem)
         }
     }
-
     deletaAgendamento = async (ID_CLIENTE) => {
         try {
+            await this.verificandoId(ID_CLIENTE);
             return await this.dao.deletaAgendamento(ID_CLIENTE)  
         } catch (error) {
             return {
@@ -60,6 +60,16 @@ class Agendamentos {
                 "erro" : true
             })
         }
+    }
+
+    verificandoId = async (ID_CLIENTE) => {
+        const verifica = await this.dao.verificaId(ID_CLIENTE);
+        if (verifica.length != 0) {
+          return verifica;
+        } else {
+          throw new Error(`Não há agendamento com o id ${ID_CLIENTE} no banco de dados`);
+        }
+      };
     }
 
 }
