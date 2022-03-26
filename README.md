@@ -71,7 +71,7 @@ cd projetoAcademiaAPI
 ```
 Para iniciar os projetos use o comando abaixo
 ```sh
-npm start
+npm run dev
 ```
 
 #### Rotas e seus resultados
@@ -133,6 +133,14 @@ Schema da resposta.
   "Erro": (booleano)
   ```
   * Método POST para adicionar um novo agendamento ( /agendamentos)
+
+Para adicionar, segue o esquema:
+	"cliente" : "",
+	"data" : "",
+	"profissional" : "",
+	"período" : "",
+	"serviço" : "",
+	"observações" : ""
 
 Schema da resposta. 
 ```sh
