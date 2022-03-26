@@ -103,6 +103,17 @@ class AgendamentosDAO{
         })
     }
 
-}
+    verificaId = (ID_CLIENTE) => {
+        return new Promise((resolve, reject) => {
+          this.db.all("SELECT * FROM AGENDAMENTOS WHERE ID_CLIENTE = ?", ID_CLIENTE, (error, rows) => {
+            if (error) {
+              reject(error);
+            } else {
+              resolve(rows);
+            }
+          });
+        });
+      };
+    }
 
 export default AgendamentosDAO

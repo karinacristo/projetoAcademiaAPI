@@ -38,6 +38,7 @@ class Agendamentos {
             throw new Error (error.mensagem)
         }
     }
+
     deletaAgendamento = async (ID_CLIENTE) => {
         try {
             await this.verificandoId(ID_CLIENTE);
@@ -52,6 +53,7 @@ class Agendamentos {
 
     atualizaAgendamento = async (ID_CLIENTE, agendamento) => {
         try {
+            await this.verificandoId(ID_CLIENTE);
             const agendamentoAtualizado = new AgendamentosSchema(agendamento.cliente, agendamento.data, agendamento.profissional, agendamento.período, agendamento.serviço, agendamento.observações)
             return await this.dao.atualizaAgendamento(ID_CLIENTE, agendamentoAtualizado)
         } catch (error) {
@@ -70,8 +72,6 @@ class Agendamentos {
           throw new Error(`Não há agendamento com o id ${ID_CLIENTE} no banco de dados`);
         }
       };
-    }
-
-}
+ }
 
 export default Agendamentos
