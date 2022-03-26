@@ -56,18 +56,6 @@ Lembre-se do que você irá precisará ter instalado em sua máquina para execut
    ```sh
    npm install
    ```
-2. Instale Express
-   ```sh
-   npm install express
-   ```
-3. Instale Nodemon
-   ```sh
-   npm install nodemon
-   ```
-3. Instale SQLite
-   ```sh
-   npm install sqlite3
-   ```
    
   #### Instalação
   
@@ -84,11 +72,6 @@ cd projetoAcademiaAPI
 Para iniciar os projetos use o comando abaixo
 ```sh
 npm start
-```
-#### Popular o banco de dados
-Para o arquivo 'database.db' ser populado, exite o arquivo tabelas. Para fazê-lo rodar, abra seu terminal e execute o comando:
-```sh
-npm run go
 ```
 
 #### Rotas e seus resultados
